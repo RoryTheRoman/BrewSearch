@@ -106,6 +106,19 @@ ul.navbar-nav {
 	margin-top:20px;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #444444;
+    border-color: #818080;
+}
+
+#beerresultscontainer {
+	padding:35px;
+}
+.btn.nohover:hover {
+ background-color: #444444;
+}
+
 
 /***** Features *****/
 

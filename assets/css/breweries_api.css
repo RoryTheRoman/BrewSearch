@@ -1,0 +1,12 @@
+h3 {
+    color: white;
+}
+
+select {
+    height: 36px;
+    width: 182px;
+}
+
+option {
+    color: black;
+}

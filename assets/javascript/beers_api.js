@@ -20,9 +20,13 @@ var beers = [];
             var displayABV = results[i].abv;
             
 
-             $("#beerTable > tbody").prepend("<tr><td>" + displayName + "</td><td>" + displayDescript + "</td><td>" +
+             $("#beerTable > tbody").append("<tr><td>" + displayName + "</td><td>" + displayDescript + "</td><td>" +
           displayStyle + "</td><td>" + displayABV + "</td></tr>")
           };
+
+          $("reset").on("click", function() {
+            $("beerTable").empty();
+          });
 
         });
 
@@ -41,4 +45,5 @@ var beers = [];
     });
   
  $(document).on("click", "#add-beer", getBeerName);
+ $(document).on("click", "#reset", getBeerName);
 

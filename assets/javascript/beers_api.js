@@ -6,7 +6,7 @@ var beers = [];
 
         $.ajax({
           url: queryURL,
-          method: 'GET'
+          method: 'GET',
           }).done(function(response) {
           // console.log(response);
 
@@ -28,7 +28,7 @@ var beers = [];
             $("beerTable").empty();
           });
 
-        });
+        })
 
   };
 

@@ -6,7 +6,7 @@ $('#ageModal').modal({
 });
 
 $(document).ready(function(){
-	// $("#ageModal").modal('show');
+	$("#ageModal").modal('show');
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
 		console.log("userDate" + userDate);				
@@ -17,7 +17,8 @@ $(document).ready(function(){
  		var diffDate = (compareDate * -1);
  		console.log("compare" + diffDate);
  		if (diffDate >= 21) {
- 			$("#ageModal").modal("hide");
+ 			$(".modal-open").removeClass("modal-open");
+ 			$("#ageModal, .modal-backdrop").modal("hide").remove();
  		}else {
  			$("#modal-body").html("Enjoy a soda instead, kiddo!");
  			window.location.replace("http://berghoffbeer.com/sodas/");

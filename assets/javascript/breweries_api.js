@@ -8,6 +8,8 @@ var state;
   $("#location-submit").on("click", function(event) {
     event.preventDefault();
 
+    $("#breweries-row").empty();
+
     if ($("#city-input").val() != "" && $("#state-input").val() != "") {
 
       // Stores inputted location
@@ -34,16 +36,45 @@ var state;
       url: queryURL,
       method: "GET"
     }).done(function(response) {
-      console.log(response);
+      // console.log(response);
     
         // var to hold results array
         var results = response.data;
 
-        // Look through each result from search
-        for (var i = 0; i < results.length; i++) {
-        console.log(results);
+        // Checks for valid search parameters
+        if (results.length != undefined) {
 
+          // Look through each result from search
+          for (var i = 0; i < results.length; i++) {
+            console.log(results[i].brewery.website);
+          
+            var imageURL = results[i].brewery.images ?  results[i].brewery.images.squareMedium : "";
+            console.log(i + ' ' + imageURL);
+            var breweryImage = $("<img />", {
+              "src": imageURL
+            });
+          
+            var breweryName = results[i].name;
+            console.log(breweryName);
+            var breweryWebsite = results[i].brewery.website;
+            console.log(breweryWebsite);
+            var breweryAddress = results[i].streetAddress;
+            console.log(breweryAddress);
 
+            var breweryId = "brewery" + i;
+            var breweryDiv = $("<div class='col-md-3 brewery' id='" + breweryId + "'>");
+
+            if (breweryImage.src != "unknown" && breweryName != undefined && breweryAddress != undefined && breweryWebsite != undefined) {
+
+              $("#breweries-row").append(breweryDiv);
+              $(breweryDiv).append(breweryImage);
+              $(breweryDiv).append("<p>" + breweryName + "</p>");
+              $(breweryDiv).append("<p>" + breweryAddress + "</p>");
+              $(breweryDiv).append("<p><a href='" + breweryWebsite + "' target='_blank'>" + breweryWebsite + "</a></p>");
+            } 
+          }
+        } else {
+          $("#breweries-row").append("<div=col-md-12><p>Sorry, we couldn't find a brewery based on your search. Please try another search.</p></div>")
         }
     }); 
   }   

@@ -58,7 +58,7 @@
             </div>
         </nav>
                 
-        <!-- Top content -->
+        <!-- Top content: Brewery search by location -->
         <div class="top-content">
             <div class="container">
                 <div class="row">
@@ -134,15 +134,21 @@
         <section id="breweries" class="content-section text-center">
         <div class="breweries-section">
             <div class="container">
-              <div class="row" id="breweries-row">
+              <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h4>Breweries Results</h4>
-                    
                     <div class="divider-1">
                         <div class="line"></div>
                     </div>
-        </div>
-    </div>
+                </div>
+             </div>
+            </div> 
+    
+            <div class="container">
+                <div class="row" id="breweries-row">
+                    <!-- populated by searchForBreweries results loop -->
+                </div>    
+            </div>    
 
                   <hr>
                     <h3>Our Social Sites</h3>
@@ -151,8 +157,7 @@
                     <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
                     <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name">Youtube</span></i></a></li>
                   </ul>
-                </div>
-              </div>
+
             </div>
         </div>
       </section>
@@ -177,7 +182,7 @@
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/retina-1.1.0.min.js"></script>
         <script src="assets/js/scripts.js"></script>
-        
+        <script src="assets/javascript/breweries_api.js"></script>
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->

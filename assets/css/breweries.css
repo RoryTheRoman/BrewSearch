@@ -1,0 +1,31 @@
+html, body {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+h3 {
+    color: white;
+}
+
+select {
+    height: 36px;
+    width: 182px;
+    color: black;
+}
+
+input, option {
+    color: black;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.brewery {
+    margin: 10px;
+    border: 1px grey solid;
+}

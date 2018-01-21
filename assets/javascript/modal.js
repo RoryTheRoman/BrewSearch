@@ -19,10 +19,13 @@ $(document).ready(function(){
  		if (diffDate >= 21) {
  			$(".modal-open").removeClass("modal-open");
  			$("#ageModal, .modal-backdrop").modal("hide").remove();
- 		}else {
- 			$(".modal-body").html("Enjoy a soda instead, kiddo!");
- 			window.location.replace("http://berghoffbeer.com/sodas/");
- 			
+ 		}else { 
+  			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda instead, kiddo!");
+
+			setTimeout(function(){ 			
+ 			window.location.replace("http://berghoffbeer.com/sodas/");		
+			}, 2000);
+
  		}
 
 	});

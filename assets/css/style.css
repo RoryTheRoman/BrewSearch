@@ -207,5 +207,10 @@ only screen and (                min-resolution: 2dppx) {
 	
 }
 
-
+#modalRedir {
+	font-family: 'Josefin Sans', sans-serif
+	font-weight: bolder;
+	font-size: 30px;
+	color: red;
+}
 

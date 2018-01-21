@@ -6,26 +6,26 @@ $('#ageModal').modal({
 });
 
 $(document).ready(function(){
-	$("#ageModal").modal('show');
+
+
+	$("#ageModal").modal('show');		
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
-		console.log("userDate" + userDate);				
 		var randomFormat = "YYYY/MM/DD";
 	    var convertedDate = moment(userDate, randomFormat);
-	    console.log("conv" + convertedDate);
     	var compareDate = moment(convertedDate).diff(moment(), "years");
  		var diffDate = (compareDate * -1);
- 		console.log("compare" + diffDate);
  		if (diffDate >= 21) {
  			$(".modal-open").removeClass("modal-open");
  			$("#ageModal, .modal-backdrop").modal("hide").remove();
- 		}else {
- 			$("#modal-body").html("Enjoy a soda instead, kiddo!");
- 			window.location.replace("http://berghoffbeer.com/sodas/");
- 			
+ 		}else { 
+  			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda instead, kiddo!");
+			setTimeout(function(){ 			
+ 			window.location.replace("http://berghoffbeer.com/sodas/");		
+			}, 2000);
  		}
+		});
 
-	});
 
 
 
@@ -34,3 +34,4 @@ $(document).ready(function(){
 
 
 });//closes document.ready function
+

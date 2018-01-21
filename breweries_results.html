@@ -52,7 +52,6 @@
                         <li><a href="breweries_results.html">Go Out</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        
                     </ul>
                 </div>
             </div>
@@ -70,10 +69,10 @@
                                 <input type="text" id="city-input" placeholder="City">
                                 <select id="state-input" name="state" placeholder="State">
                                     <option value="">State</option>
-                                    <option value="alaska">Alaska</option>
                                     <option value="alabama">Alabama</option>
-                                    <option value="arkansas">Arkansas</option>
+                                    <option value="alaska">Alaska</option>
                                     <option value="arizona">Arizona</option>
+                                    <option value="arkansas">Arkansas</option>
                                     <option value="california">California</option>
                                     <option value="colorado">Colorado</option>
                                     <option value="connecticut">Connecticut</option>
@@ -81,29 +80,29 @@
                                     <option value="florida">Florida</option>
                                     <option value="georgia">Georgia</option>
                                     <option value="hawaii">Hawaii</option>
-                                    <option value="iowa">Iowa</option>
                                     <option value="idaho">Idaho</option>
                                     <option value="illinois">Illinois</option>
                                     <option value="indiana">Indiana</option>
+                                    <option value="iowa">Iowa</option>
                                     <option value="kansas">Kansas</option>
                                     <option value="kentucky">Kentucky</option>
                                     <option value="louisiana">Louisiana</option>
-                                    <option value="massachusetts">Massachusetts</option>
-                                    <option value="maryland">Maryland</option>
                                     <option value="maine">Maine</option>
+                                    <option value="maryland">Maryland</option>
+                                    <option value="massachusetts">Massachusetts</option>
                                     <option value="michigan">Michigan</option>
                                     <option value="minnesota">Minnesota</option>
-                                    <option value="missouri">Missouri</option>
                                     <option value="mississippi">Mississippi</option>
+                                    <option value="missouri">Missouri</option>
                                     <option value="montana">Montana</option>
-                                    <option value="north carolina">North Carolina</option>
-                                    <option value="north dakota">North Dakota</option>
                                     <option value="nebraska">Nebraska</option>
+                                    <option value="nevada">Nevada</option>
                                     <option value="new hampshire">New Hampshire</option>
                                     <option value="new jersey">New Jersey</option>
                                     <option value="new mexico">New Mexico</option>
-                                    <option value="nevada">Nevada</option>
                                     <option value="new york">New York</option>
+                                    <option value="north carolina">North Carolina</option>
+                                    <option value="north dakota">North Dakota</option>
                                     <option value="ohio">Ohio</option>
                                     <option value="oklahoma">Oklahoma</option>
                                     <option value="oregon">Oregon</option>
@@ -114,11 +113,11 @@
                                     <option value="tennessee">Tennessee</option>
                                     <option value="texas">Texas</option>
                                     <option value="utah">Utah</option>
-                                    <option value="virginia">Virginia</option>
                                     <option value="vermont">Vermont</option>
+                                    <option value="virginia">Virginia</option>
                                     <option value="washington">Washington</option>
-                                    <option value="wisconsin">Wisconsin</option>
                                     <option value="west virginia">West Virginia</option>
+                                    <option value="wisconsin">Wisconsin</option>
                                     <option value="wyoming">Wyoming</option>
                                 </select>
                                 <input type="submit" class="btn btn-default" id="location-submit" value="Search">
@@ -126,7 +125,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
         
@@ -135,8 +133,8 @@
         <div class="breweries-section">
             <div class="container">
               <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h4>Breweries Results</h4>
+                <div class="col-md-12">
+                    <h4 id="breweries-results"></h4>
                     <div class="divider-1">
                         <div class="line"></div>
                     </div>
@@ -144,7 +142,7 @@
              </div>
             </div> 
     
-            <div class="container">
+            <div class="container breweries-container">
                 <div class="row" id="breweries-row">
                     <!-- populated by searchForBreweries results loop -->
                 </div>    
@@ -162,7 +160,6 @@
         </div>
       </section>
        
-        
         <!-- Footer -->
         <footer>
             <div class="container">

@@ -25,7 +25,17 @@ p {
     padding: 0;
 }
 
+.breweries-container {
+    margin-left: 300px;
+}
+
 .brewery {
     margin: 10px;
     border: 1px grey solid;
+    height: 346px;
+    padding: 0;
+}
+
+.brewery img {
+    min-height: 256px;
 }

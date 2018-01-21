@@ -18,6 +18,8 @@ var beers = [];
             var displayDescript = results[i].description;
             var displayStyle = results[i].style.shortName;
             var displayABV = results[i].abv;
+
+            if (displayName != undefined && displayDescript != undefined && displayStyle != undefined && displayABV != undefined) {
             
 
              $("#beerTable > tbody").append("<tr><td>" + displayName + "</td><td>" + displayDescript + "</td><td>" +
@@ -27,6 +29,8 @@ var beers = [];
           $("reset").on("click", function() {
             $("beerTable").empty();
           });
+
+        };
 
         });
 

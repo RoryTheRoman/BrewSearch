@@ -20,7 +20,7 @@ $(document).ready(function(){
  			$(".modal-open").removeClass("modal-open");
  			$("#ageModal, .modal-backdrop").modal("hide").remove();
  		}else {
- 			$("#modal-body").html("Enjoy a soda instead, kiddo!");
+ 			$(".modal-body").html("Enjoy a soda instead, kiddo!");
  			window.location.replace("http://berghoffbeer.com/sodas/");
  			
  		}

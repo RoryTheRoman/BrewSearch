@@ -1,14 +1,15 @@
 //disables clicking outside of modal to remove it:
 //this must remain outside of document.ready 
-$('#ageModal').modal({
-    backdrop: 'static',
-    keyboard: false
-});
 
 $(document).ready(function(){
+	$('#ageModal').modal({
+    backdrop: 'static',
+    keyboard: false,
+	});
 
+	// document.cookie = "verified=false";	
 
-	$("#ageModal").modal('show');		
+	$("#ageModal").modal('show');
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
 		var randomFormat = "YYYY/MM/DD";
@@ -18,6 +19,8 @@ $(document).ready(function(){
  		if (diffDate >= 21) {
  			$(".modal-open").removeClass("modal-open");
  			$("#ageModal, .modal-backdrop").modal("hide").remove();
+ 			// document.cookie = "verified=true";
+ 			// console.log("cookie" + document.cookie);
  		}else { 
   			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda instead, kiddo!");
 			setTimeout(function(){ 			

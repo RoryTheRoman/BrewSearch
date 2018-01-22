@@ -47,10 +47,10 @@ $(document).ready(function(){
 			// 	$("#ageModal").modal("hide");
 			// }
 
-    if ($.cookie('verified') == null) {
-        $.cookie('verified', 'yes',);
-        $('#ageModal').modal("show");
-       } 
+    // if ($.cookie('verified') == null) {
+    //     $.cookie('verified', 'yes',);
+    //     $('#ageModal').modal("show");
+    //    } 
 
 // $("#modal").remove();
 // $('.modal-backdrop').remove(); this is the one i was trying to avoid having cookies altogether.

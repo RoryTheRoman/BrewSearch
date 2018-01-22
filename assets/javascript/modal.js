@@ -6,7 +6,15 @@ $(document).ready(function(){
     backdrop: 'static',
     keyboard: false,
 	});
-	$("#ageModal").modal('show');
+	// if (cookieValue !== 0)	{
+	// 		$("#ageModal").modal("hide")
+	// 	}else{
+	// 		$("#ageModal").modal("show");
+
+	// 	}
+
+			$("#ageModal").modal("show");
+	
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
 		var randomFormat = "YYYY/MM/DD";
@@ -19,13 +27,20 @@ $(document).ready(function(){
  			$(".modal-open").removeClass("modal-open");
  			$("#ageModal, .modal-backdrop").modal("hide").remove();
  		}else { 
-  			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda instead, kiddo!");
+  			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda-pop instead, kiddo!");
 			setTimeout(function(){ 			
  			window.location.replace("http://berghoffbeer.com/sodas/");		
 			}, 2000);
+			var cookieValue = Cookies.get("verified");
+		
  		}
 		});
 
+			// if (verified === 1){
+			// 	$("#ageModal").modal("hide");
+			// }else {
+			// 	$("#ageModal").modal("show");
+			// }
 
 
 

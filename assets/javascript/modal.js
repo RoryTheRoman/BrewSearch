@@ -6,12 +6,20 @@ $(document).ready(function(){
     backdrop: 'static',
     keyboard: false,
 	});
+	
 	// if (cookieValue !== 0)	{
 	// 		$("#ageModal").modal("hide")
 	// 	}else{
 	// 		$("#ageModal").modal("show");
 
-	// 	}
+	// 	} from https://github.com/js-cookie/js-cookie
+
+    // function readCookie(name) {
+    //   var nameEQ = name + "=";
+    //   var ca = document.cookie.split(";");
+
+    //   return null;
+    // } this is from the homework	
 
 	$("#ageModal").modal("show");
 	$("#ageSubmitButton").on("click", function(){
@@ -29,21 +37,23 @@ $(document).ready(function(){
   			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda-pop instead, kiddo!");
 			setTimeout(function(){ 			
  			window.location.replace("http://berghoffbeer.com/sodas/");		
-			}, 2000);
-			var cookieValue = Cookies.get("verified");
-		
+			}, 2000);		
  		}
 		});
 
-			// if (verified === 1){
-			// 	$("#ageModal").modal("hide");
-			// }else {
+			// if (verified == null){
 			// 	$("#ageModal").modal("show");
+			// }else {
+			// 	$("#ageModal").modal("hide");
 			// }
 
+    if ($.cookie('verified') == null) {
+        $.cookie('verified', 'yes',);
+        $('#ageModal').modal("show");
+       } 
 
-
-
+// $("#modal").remove();
+// $('.modal-backdrop').remove(); this is the one i was trying to avoid having cookies altogether.
 
 
 

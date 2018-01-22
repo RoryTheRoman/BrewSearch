@@ -13,8 +13,7 @@ $(document).ready(function(){
 
 	// 	}
 
-			$("#ageModal").modal("show");
-	
+	$("#ageModal").modal("show");
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
 		var randomFormat = "YYYY/MM/DD";

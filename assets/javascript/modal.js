@@ -6,9 +6,6 @@ $(document).ready(function(){
     backdrop: 'static',
     keyboard: false,
 	});
-
-	// document.cookie = "verified=false";	
-
 	$("#ageModal").modal('show');
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
@@ -17,10 +14,10 @@ $(document).ready(function(){
     	var compareDate = moment(convertedDate).diff(moment(), "years");
  		var diffDate = (compareDate * -1);
  		if (diffDate >= 21) {
+ 			var verified = Cookies.set("verified",1);
+ 			console.log(verified);
  			$(".modal-open").removeClass("modal-open");
  			$("#ageModal, .modal-backdrop").modal("hide").remove();
- 			// document.cookie = "verified=true";
- 			// console.log("cookie" + document.cookie);
  		}else { 
   			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda instead, kiddo!");
 			setTimeout(function(){ 			

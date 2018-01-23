@@ -7,15 +7,23 @@ $(document).ready(function(){
     keyboard: false,
 	});
 	
-	
+	function hideModal(){
+	 	$(".modal-open").removeClass("modal-open");
+		$("#ageModal").addClass("hide");
+		$("#ageModal, .modal-backdrop").modal("hide").remove();
+	}
+	function showModal(){
+		$("#ageModal").removeClass("hide");
+		$("#ageModal").modal("show");
+
+	}
+	if (localStorage.getItem('verified')  || localStorage.getItem('verified') === "true") {
+		hideModal();
+	}		
 
     if (!localStorage.getItem('verified') || localStorage.getItem('verified') === "false") {
-    	console.log('yes')
-    	$("#ageModal").removeClass("hide");
-		$("#ageModal").modal("show");
-    	
-    }
-	// $("#ageModal").modal("show");
+    	showModal();
+   	}
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
 		var randomFormat = "YYYY/MM/DD";
@@ -23,8 +31,7 @@ $(document).ready(function(){
     	var compareDate = moment(convertedDate).diff(moment(), "years");
  		var diffDate = (compareDate * -1);
  		if (diffDate >= 21) {
- 			$(".modal-open").removeClass("modal-open");
- 			$("#ageModal, .modal-backdrop").modal("hide").remove();
+ 			hideModal();
  			localStorage.setItem('verified', true);
  		}else { 
  			localStorage.setItem('verified', false);

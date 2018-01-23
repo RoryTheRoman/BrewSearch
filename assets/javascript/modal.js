@@ -17,11 +17,11 @@ $(document).ready(function(){
 		$("#ageModal").modal("show");
 
 	}
-	if (localStorage.getItem('verified')  || localStorage.getItem('verified') === "true") {
+	if (localStorage.getItem('verified') === "true") {
 		hideModal();
 	}		
 
-    if (!localStorage.getItem('verified') || localStorage.getItem('verified') === "false") {
+    if (!localStorage.getItem('verified') || localStorage.getItem('verified') && localStorage.getItem('verified') === "false") {
     	showModal();
    	}
 	$("#ageSubmitButton").on("click", function(){

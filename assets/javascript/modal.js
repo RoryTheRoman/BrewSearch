@@ -6,10 +6,24 @@ $(document).ready(function(){
     backdrop: 'static',
     keyboard: false,
 	});
+	
+	function hideModal(){
+	 	$(".modal-open").removeClass("modal-open");
+		$("#ageModal").addClass("hide");
+		$("#ageModal, .modal-backdrop").modal("hide").remove();
+	}
+	function showModal(){
+		$("#ageModal").removeClass("hide");
+		$("#ageModal").modal("show");
 
-	// document.cookie = "verified=false";	
+	}
+	if (localStorage.getItem('verified')  || localStorage.getItem('verified') === "true") {
+		hideModal();
+	}		
 
-	$("#ageModal").modal('show');
+    if (!localStorage.getItem('verified') || localStorage.getItem('verified') === "false") {
+    	showModal();
+   	}
 	$("#ageSubmitButton").on("click", function(){
 		var userDate = $("#ageInput").val();
 		var randomFormat = "YYYY/MM/DD";
@@ -17,20 +31,16 @@ $(document).ready(function(){
     	var compareDate = moment(convertedDate).diff(moment(), "years");
  		var diffDate = (compareDate * -1);
  		if (diffDate >= 21) {
- 			$(".modal-open").removeClass("modal-open");
- 			$("#ageModal, .modal-backdrop").modal("hide").remove();
- 			// document.cookie = "verified=true";
- 			// console.log("cookie" + document.cookie);
+ 			hideModal();
+ 			localStorage.setItem('verified', true);
  		}else { 
-  			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda instead, kiddo!");
+ 			localStorage.setItem('verified', false);
+  			$(".modal-body").html("<div id='modalRedir'>Enjoy a soda-pop instead, kiddo!");
 			setTimeout(function(){ 			
  			window.location.replace("http://berghoffbeer.com/sodas/");		
-			}, 2000);
+			}, 2000);		
  		}
 		});
-
-
-
 
 
 

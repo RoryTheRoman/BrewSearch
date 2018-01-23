@@ -56,18 +56,18 @@ var stateCap;
 
       // Looks through each result from search and populates results page
       for (var i = 0; i < results.length; i++) {
-        console.log(results[i].brewery.website);
+        // console.log(results[i].brewery.website);
         var imageURL = results[i].brewery.images ?  results[i].brewery.images.squareMedium : "";
-        console.log(i + ' ' + imageURL);
+        // console.log(i + ' ' + imageURL);
         var breweryImage = $("<img />", {
           "src": imageURL
         });
         var breweryName = results[i].brewery.name;
-        console.log(breweryName);
+        // console.log(breweryName);
         var breweryWebsite = results[i].brewery.website;
-        console.log(breweryWebsite);
+        // console.log(breweryWebsite);
         var breweryAddress = results[i].streetAddress;
-        console.log(breweryAddress);
+        // console.log(breweryAddress);
         var breweryId = "brewery" + i;
         var breweryDiv = $("<div class='col-md-3 brewery' id='" + breweryId + "'>");
 
